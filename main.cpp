@@ -27,7 +27,7 @@ int main()
     gui.setSong(jukebox.playRandom());
 
     //Register the stop and play functionality
-    gui.setCallbacks([&]{ if(gui.getSong() != jukebox.getCurrentName()) jukebox.stop(); jukebox.playSong(gui.getSong()); }, [&]{ jukebox.pause(); }, [&]{ jukebox.stop(); });
+    gui.setCallbacks([&]{ if(gui.getSong() != jukebox.getCurrentName()) jukebox.stop(); jukebox.playSong(gui.getSong()); }, [&]{ jukebox.pause(); }, [&]{ jukebox.stop(); gui.setProgress(0); });
 
     //Variables for main loop
     bool running = true;
